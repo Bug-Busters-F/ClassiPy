@@ -10,7 +10,7 @@
 
 <p align="center">
  | <a href ="#desafio"> Desafio da Sprint</a>  |
- <a href ="#user-stories"> User Stories</a>  |   
+ <a href ="#user-stories"> User Stories</a>  |
  <a href ="#dor">DoR</a>  |
  <a href ="#dod">DoD</a>  |
  <a href ="#equipe"> Equipe</a> |
@@ -29,6 +29,8 @@ O desafio da Sprint 1 foi estabelecer a fundação completa do ClassiPy. O objet
 |   CLPY-6    |    Alta    | Como operador de cadastro, eu gostaria de carregar um PDF de documentos de importação para que o sistema identifique os Part Numbers. |    ✅    |
 |   CLPY-3    |    Alta    | Como operador de cadastro, eu gostaria de visualizar a lista de Part Numbers extraídos para confirmar que a leitura foi correta.      |    ✅    |
 |   CLPY-2    |   Média    | Como operador de cadastro, eu gostaria de acessar uma interface clara e organizada para acompanhar o processo de classificação.    |    ✅    |
+
+---
 
 ## 🏅 DoR - Definition of Ready <a id="dor"></a>
 
