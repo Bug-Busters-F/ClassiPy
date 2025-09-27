@@ -10,24 +10,21 @@ Projeto API do 4° semestre de Análise e Desenvolvimento de Sistemas da equipe 
 
 ## 📃 Índice
 
-- [API - 4º Semestre ADS](#api---4º-semestre-ads)
-- [ClassiPy](#classipy)
-  - [📃 Índice](#-índice)
-- [🏅 Desafio](#-desafio)
-- [🏅 Solução](#-solução)
-  - [📋 Backlog do Produto](#-backlog-do-produto)
-  - [🗓️ Cronograma das Sprints](#️-cronograma-das-sprints)
-  - [⚙️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-  - [Competências desenvolvidas](#competências-desenvolvidas)
-    - [Hard Skills](#hard-skills)
-    - [Soft Skills](#soft-skills)
-  - [Autores](#autores)
+<p align="center">
+ | <a href ="#-desafio"> Desafio</a>  |
+ <a href ="#-solução"> Solução</a>  |   
+ <a href ="#-backlog-do-produto"> Backlog do Produto</a>  |
+ <a href ="#️-cronograma-das-sprints"> Cronograma de Sprints</a>  |
+ <a href ="#-tecnologias-utilizadas">Tecnologias</a> |
+ <a href ="#-manual-de-instalação">Manual de Instalação</a>  | 
+ <a href ="#-autores"> Autores</a> |
+</p>
 
-# 🏅 Desafio
+# 🎯 Desafio
 
 O desafio consiste no desenvolvimento de um Agente de Inteligência Artificial para instrução de Processo para Registro de Importação. O processo manual de elaboração de registros aduaneiros para materiais produtivos, especialmente na indústria eletroeletrônica, é complexo e suscetível a erros. É necessário relacionar informações como Part-Number, classificação fiscal (NCM), fabricante e origem com endereço completo, gerando uma descrição detalhada do material. Qualquer ambiguidade ou erro nessas informações pode gerar dúvidas para a Receita Federal, acarretando penalidades e multas sobre a declaração do material importado.
 
-# 🏅 Solução
+# 🧠 Solução
 
 ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web projetada para resolver este desafio, automatizando e otimizando o processo de instrução de registro aduaneiro. A solução permite que o usuário faça o upload de um pedido de compras em formato PDF. A partir do documento, nosso agente de IA extrai todos os Part-Numbers e, para cada um, realiza uma busca inteligente para sugerir a classificação fiscal completa, incluindo descrição detalhada do produto, NCM, fabricante e mais.
 
@@ -47,6 +44,12 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 |  8   |    Alta    | Como operador de cadastro, eu gostaria que o sistema apresente resultados cada vez mais precisos para reduzir retrabalho.                                                                       |   3    |   ❌   |
 |  9   |    Alta    | Como operador de cadastro, eu gostaria de utilizar um sistema estável e sem erros críticos, para não comprometer os prazos de importação.                                                       |   3    |   ❌   |
 |  10  |   Média    | Como analista de importação, eu gostaria de ter acesso a um guia de uso do sistema para operar corretamente e sem dúvidas.                                                                      |   3    |   ❌   |
+
+---
+
+## 📽️ Demonstração do Projeto - Sprint 1
+
+<!-- colocar video aqui -->
 
 ---
 
@@ -85,34 +88,158 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
   <a href="https://www.atlassian.com/software/jira"><img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white"/></a>
 </h4>
 
-## Competências desenvolvidas
+---
 
-### 💻 Hard Skills
+## 📖 Manual de Instalação
 
-Hard skills desenvolvidas
+### ☑️ Pré-requisitos
 
-- Habilidades analíticas;
-- Linguagens e Frameworks
-  - React
-  - JavaScript
-  - TypeScript
-  - PostgreSQL
-  - HTML, CSS
-- Conhecimento em ferramentas;
-  - Jira
-  - Git e GitHub
-- Gestão de projetos;
-- Competências técnicas;
+- Uma conta no [GitHub](https://github.com/)
+- O _version control system_ [Git](https://git-scm.com/) instalado.
+- Um IDE para o desenvolvimento. Recomendamos o [Visual Studio Code](https://code.visualstudio.com).
+- Node.js 22+ ([Download](https://nodejs.org/en/download))
+- Python v3.12+ [Python v3.12](https://www.python.org/downloads/release/python-3120/).
+- O runtime [Ollama](https://ollama.com/download) para LLMs locais.
+- [Postgres](https://www.postgresql.org/download/) para armazenamento.
+  > **Observação:** Caso não queira instalar o Ollama e o Postgres manualmente, você pode rodá-los via **Docker**. Também é possível rodar o **backend** no Docker junto com eles, o que simplifica a configuração.  
+  > **Importante para usuários Windows:** Se você optar por rodar o Postgres no Docker, o backend também precisará rodar dentro de um container Docker, para evitar problemas de conexão.
 
-### 🤝 Soft Skills
+## ✅ Instalação
 
-Soft skills desenvolvidas
+### 1. Clonar o Repositório Back-end
 
-- Resolução de conflitos;
-- Adaptabilidade;
-- Comunicação;
-- Autonomia
-- Trabalho em equipe.
+O primeiro passo é clonar o repositório do projeto para o seu ambiente local.
+
+1. Abra um terminal.
+
+2. Execute o seguinte comando para clonar o repositório:
+
+   ```bash
+   git clone https://github.com/Bug-Busters-F/ClassiPy-backend
+   ```
+
+3. Navegue até o diretório do projeto:
+
+   ```bash
+   cd ClassiPy-backend
+   ```
+
+4. Configure as variáveis de ambiente
+
+   ```sh
+   cp .env.template .env
+   ```
+
+5. Abra o arquivo `.env` e edite as credenciais de conexão com o ollama e o banco de dados.
+
+   ```sh
+   OLLAMA_MODEL= # Modelo baixado no ollama
+   OLLAMA_API_PORT=11434 # Porta padrão do ollama
+
+   DATABASE_URL=postgresql+psycopg2://root:root123@localhost:5432/classipy_database
+   ```
+
+### 2. Rodando Backend, Postgres e Ollama via Docker
+
+Você pode rodar o **backend**, o **Postgres** e o **Ollama** usando **Docker Compose**, sem precisar instalar nada manualmente.
+
+1. Certifique-se de ter [Docker](https://www.docker.com/) e [Docker Compose](https://docs.docker.com/compose/install/) instalados.
+
+2. No diretório do projeto, suba os containers:
+
+   ```bash
+   docker compose up -d
+   ```
+
+   Isso vai iniciar:
+
+   - Backend (porta 8000)
+   - Postgres (porta 5432)
+   - Ollama (porta 11434)
+
+3. Baixe o modelo LLM desejado no Ollama:
+   ```bash
+   docker compose exec ollama ollama pull nomeDoModelo
+   ```
+   Substitua **nomeDoModelo** pelo modelo que você deseja usar.
+
+### 3. Instalação utilizando um ambiente virtual `venv`
+
+1. Crie o ambiente virtual
+
+   ```sh
+   python -m venv venv
+
+   # Windows - ative o ambiente
+   source venv/Scripts/activate
+
+   # Linux - ative o ambiente
+   . venv/bin/activate
+
+   # Mac - ative o ambiente
+   source venv/bin/activate
+   ```
+
+2. Instale as dependências
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Execute a aplicação
+
+   ```sh
+   uvicorn src.main:app --reload
+   ```
+
+   Ou execute o camando
+
+   ```sh
+   python run.py
+   ```
+
+4. Acesse a Aplicação
+
+- O FastAPI está disponível em: [http://localhost:8000](http://localhost:8000)
+- Para testar rotas utilize: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### 4. Clonar o Repositório Front-end
+
+O primeiro passo é clonar o repositório do projeto para o seu ambiente local.
+
+1.  Abra um terminal.
+
+2.  Execute o seguinte comando para clonar o repositório:
+
+    ```bash
+    git clone [https://github.com/Bug-Busters-F/ClassiPy-frontend](https://github.com/Bug-Busters-F/ClassiPy-frontend)
+    ```
+
+3.  Navegue até o diretório do projeto:
+    ```bash
+    cd ClassiPy-frontend
+    ```
+
+### 5. Instalar Dependências e Rodar o Projeto
+
+Com o ambiente configurado, basta instalar as dependências do Node.js e iniciar o servidor de desenvolvimento.
+
+1.  Instale as dependências do projeto:
+
+    ```sh
+    npm install
+    ```
+
+2.  Execute a aplicação em modo de desenvolvimento:
+    ```sh
+    npm run dev
+    ```
+
+### 6. Acesse a Aplicação
+
+- A aplicação frontend estará disponível em: [http://localhost:5173](http://localhost:5173) .
+
+---
 
 ## 👥 Autores
 

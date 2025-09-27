@@ -13,6 +13,7 @@
  <a href ="#user-stories"> User Stories</a>  |
  <a href ="#dor">DoR</a>  |
  <a href ="#dod">DoD</a>  |
+ <a href ="#competencia">Compentências Desenvolvidas</a>  |
  <a href ="#equipe"> Equipe</a> |
 </p>
 
@@ -56,6 +57,36 @@ O desafio da Sprint 1 foi estabelecer a fundação completa do ClassiPy. O objet
 | **Documentação Atualizada** | O `README.md` ou outra documentação relevante foi atualizada para refletir as novas mudanças.         |
 | **Validação do PO** | O Product Owner validou a entrega com base nos critérios definidos.                                  |
 
+---
+## Competências desenvolvidas <a id="competencia"></a>
+
+### 💻 Hard Skills
+
+Hard skills desenvolvidas
+
+- Habilidades analíticas;
+- Linguagens e Frameworks
+  - React
+  - JavaScript
+  - TypeScript
+  - PostgreSQL
+  - HTML, CSS
+- Conhecimento em ferramentas;
+  - Jira
+  - Git e GitHub
+- Gestão de projetos;
+- Competências técnicas;
+
+### 🤝 Soft Skills
+
+Soft skills desenvolvidas
+
+- Resolução de conflitos;
+- Adaptabilidade;
+- Comunicação;
+- Autonomia
+- Trabalho em equipe.
+---
 ## Colaboradores <a id="equipe"></a>
 
 | Função        | Nome               |
