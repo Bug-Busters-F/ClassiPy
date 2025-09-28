@@ -58,12 +58,12 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ## 🗓️ Cronograma das Sprints <a id="cronogramaSprints"></a>
 
-| Sprint            | Previsão   | Status  | Documentação                                               |
-| ----------------- | ---------- | ------- | ---------------------------------------------------------- |
-| 01                | 29/09/2025 | A fazer | [Docs Sprint-1](./docs/processo/sprints/sprint1/README.md) |
-| 02                | 27/10/2025 | A fazer | [Docs Sprint-2](./docs/processo/sprints/sprint2/README.md) |
-| 03                | 24/11/2025 | A fazer | [Docs Sprint-3](./docs/processo/sprints/sprint3/README.md) |
-| Feira de Soluções | 04/12/2025 | A fazer |                                                            |
+| Sprint            | Previsão   | Status    | Documentação                                               |
+| ----------------- | ---------- | --------- | ---------------------------------------------------------- |
+| 01                | 29/09/2025 | Concluida | [Docs Sprint-1](./docs/processo/sprints/sprint1/README.md) |
+| 02                | 27/10/2025 | A fazer   | [Docs Sprint-2](./docs/processo/sprints/sprint2/README.md) |
+| 03                | 24/11/2025 | A fazer   | [Docs Sprint-3](./docs/processo/sprints/sprint3/README.md) |
+| Feira de Soluções | 04/12/2025 | A fazer   |                                                            |
 
 ---
 
