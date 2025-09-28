@@ -11,26 +11,29 @@ Projeto API do 4° semestre de Análise e Desenvolvimento de Sistemas da equipe 
 ## 📃 Índice
 
 <p align="center">
- | <a href ="#-desafio"> Desafio</a>  |
- <a href ="#-solução"> Solução</a>  |   
- <a href ="#-backlog-do-produto"> Backlog do Produto</a>  |
- <a href ="#️-cronograma-das-sprints"> Cronograma de Sprints</a>  |
- <a href ="#-tecnologias-utilizadas">Tecnologias</a> |
- <a href ="#-manual-de-instalação">Manual de Instalação</a>  | 
- <a href ="#-autores"> Autores</a> |
+ | <a href ="#desafio"> Desafio </a>  |
+ <a href ="#solução"> Solução </a>  |   
+ <a href ="/docs"> Documentação </a>  |   
+ <a href ="#backlog-do-produto"> Backlog do Produto </a>  |
+ <a href ="#️demonstracao"> Demonstração </a>  |
+ <a href ="#️cronogramaSprints"> Cronograma de Sprints </a>  |
+ <a href ="#road-map">RoadMap </a> |
+ <a href ="#tecnologias-utilizadas">Tecnologias </a> |
+ <a href ="#manual-de-instalação">Manual de Instalação </a>  | 
+ <a href ="#autores"> Autores </a> |
 </p>
 
-# 🎯 Desafio
+# 🎯 Desafio <a id="desafio"></a>
 
 O desafio consiste no desenvolvimento de um Agente de Inteligência Artificial para instrução de Processo para Registro de Importação. O processo manual de elaboração de registros aduaneiros para materiais produtivos, especialmente na indústria eletroeletrônica, é complexo e suscetível a erros. É necessário relacionar informações como Part-Number, classificação fiscal (NCM), fabricante e origem com endereço completo, gerando uma descrição detalhada do material. Qualquer ambiguidade ou erro nessas informações pode gerar dúvidas para a Receita Federal, acarretando penalidades e multas sobre a declaração do material importado.
 
-# 🧠 Solução
+# 🧠 Solução <a id="solução"></a>
 
 ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web projetada para resolver este desafio, automatizando e otimizando o processo de instrução de registro aduaneiro. A solução permite que o usuário faça o upload de um pedido de compras em formato PDF. A partir do documento, nosso agente de IA extrai todos os Part-Numbers e, para cada um, realiza uma busca inteligente para sugerir a classificação fiscal completa, incluindo descrição detalhada do produto, NCM, fabricante e mais.
 
 ---
 
-## 📋 Backlog do Produto
+## 📋 Backlog do Produto <a id="backlog-do-produto"></a>
 
 | Rank | Prioridade | User Story                                                                                                                                                                                      | Sprint | Status |
 | :--: | :--------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | :----: |
@@ -47,13 +50,13 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ---
 
-## 📽️ Demonstração do Projeto - Sprint 1
+## 📽️ Demonstração do Projeto - Sprint 1 <a id="demonstracao"></a>
 
-<!-- colocar video aqui -->
+![GIF Sprint 1](docs/gifs/gifSprint1.gif)
 
 ---
 
-## 🗓️ Cronograma das Sprints
+## 🗓️ Cronograma das Sprints <a id="cronogramaSprints"></a>
 
 | Sprint            | Previsão   | Status  | Documentação                                               |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------- |
@@ -64,7 +67,7 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ---
 
-## 🛣️ Roadmap das Sprints
+## 🛣️ Roadmap das Sprints <a id="road-map"></a>
 
 <div style="display: flex; justify-content: center;">
   <img src="./docs/img/RoadMap-ClassiPy.png" style="width: 70%">
@@ -72,7 +75,7 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ---
 
-## 🧑‍💻 Tecnologias Utilizadas
+## 🧑‍💻 Tecnologias Utilizadas <a id="tecnologias-utilizadas"></a>
 
 <h4 align="center">
   <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></a>
@@ -90,7 +93,7 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ---
 
-## 📖 Manual de Instalação
+## 📖 Manual de Instalação <a id="manual-de-instalação"></a>
 
 ### ☑️ Pré-requisitos
 
@@ -241,7 +244,7 @@ Com o ambiente configurado, basta instalar as dependências do Node.js e iniciar
 
 ---
 
-## 👥 Autores
+## 👥 Autores <a id="autores"></a>
 
 |    Função     | Nome           |                                                                                                                                               GitHub |                                                                                                                               Linkedin                                                                                                                               |
 | :-----------: | :------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -250,3 +253,5 @@ Com o ambiente configurado, basta instalar as dependências do Node.js e iniciar
 |  Team Member  | Gabriel Viell  | [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/GabrielViellCastilho) | [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-viell-castilho-220438317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) |
 |  Team Member  | Vinicius Elias |            [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ViniElias) |                                              [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vinicius-elias-895332235/)                                              |
 |  Team Member  | Davi Miyake    |            [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/DaviMBDev) |                                                    [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davimiyakeb/)                                                     |
+
+<img src="./docs/img/bug-busters-logo-black.jpg">
