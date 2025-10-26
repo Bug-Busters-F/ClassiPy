@@ -1,6 +1,8 @@
 [submodule "ClassiPy-frontend"]
 	path = ClassiPy-frontend
 	url = https://github.com/Bug-Busters-F/ClassiPy-frontend
+    branch = main
 [submodule "ClassiPy-backend"]
 	path = ClassiPy-backend
 	url = https://github.com/Bug-Busters-F/ClassiPy-backend
+    branch = main
