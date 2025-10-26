@@ -1,10 +1,27 @@
-# 📘 API ClassiPy – Documentação de Rotas
+ 📘 API ClassiPy – Documentação de Rotas
 
----
+## ⚙️ Rotas Principais do Sistema
 
-## 📄 Processamento de Arquivos e IA
+### `GET /`
+**Descrição:** Verifica o status da API (health check).  
+**Resposta `200`:**
 
----
+```json
+{
+  "ClassiPy API is running"
+}
+```
+
+### `GET /template/`
+**Descrição:** Retorna uma mensagem de template utilizada para testes de comunicação.  
+**Resposta `200`:**
+```json
+{
+  "Template Message"
+}
+```
+
+## 📄 Processamento de Arquivos
 
 ### `POST /uploadfile/`
 
@@ -46,45 +63,175 @@
 }
 ```
 
-### `POST /agent/run`
+## 🧩 Produtos
+### `POST /produto/`
+**Descrição:** Cria novos registros de produtos processados a partir do arquivo enviado.  
+**Resposta `200`:**                    
+**Corpo da requisição (`application/json`):**
+```json
+[
+  {
+    "partNumber": "string",
+    "fileHash": "string"
+  }
+]
+```
 
-**Descrição:** Executa o agente de IA para processar um prompt de texto. Esta rota é utilizada para a classificação detalhada de um Part Number, onde o prompt seria o próprio Part Number a ser classificado.
+**Resposta `201`:**      
+```json
+[
+  {
+    "pro_id": 0,
+    "partNumber": "string",
+    "fileHash": "string",
+    "status": "string"
+  }
+]
+```
 
-**Corpo da requisição (`json`):**
+### `GET /produto/`
+**Descrição:** Retorna o histórico de produtos processados, com paginação.        
+**Parâmetros de Query:**
+- `skip`: número de registros a ignorar (default: 0)
+- `limit`: número máximo de registros a retornar (default: 100)
 
+**Resposta `200`:**   
+```json
+[
+  {
+    "pro_id": 0,
+    "historyId": 0,
+    "fileHash": "string",
+    "processedDate": "2025-10-26T21:04:34.266Z",
+    "partNumber": "string",
+    "status": "string",
+    "classification": {
+      "description": "string",
+      "ncmCode": "string",
+      "taxRate": 0,
+      "manufacturer": {
+        "name": "string",
+        "country": "string",
+        "address": "string"
+      }
+    }
+  }
+]
+```
+### `DELETE /produto/{id}`
+**Descrição:** Exclui um produto do banco de dados    
+**Parâmetros de Caminho:**
+- `id`: ID do produto.    
+  
+**Resposta `200`:**   
+```json
+"Produto excluído com sucesso"
+```
+
+### `PUT /produto/{id}`
+**Descrição:** Atualiza os dados de um produto específico.        
+**Corpo da requisição (application/json):**
 ```json
 {
-  "prompt": "string"
+  "partNumber": "string",
+  "description": "string",
+  "status": "string",
+  "classification": {
+    "description": "string",
+    "ncmCode": "string",
+    "taxRate": 0
+  },
+  "manufacturer": {
+    "name": "string",
+    "country": "string",
+    "address": "string"
+  }
 }
 ```
 
----
-
-## ⚙️ Rotas do Sistema
-
----
-
-### `GET /`
-
-**Descrição:** Endpoint raiz da API, utilizado como um "health check" para verificar se o servidor está online e respondendo.
-
-**Resposta `200`:**
-
+**Resposta `200`:**   
 ```json
 {
-  "message": "Classipy API is running"
+  "pro_id": 0,
+  "historyId": 0,
+  "fileHash": "string",
+  "processedDate": "2025-10-26T21:04:34.271Z",
+  "partNumber": "string",
+  "status": "string",
+  "classification": {
+    "description": "string",
+    "ncmCode": "string",
+    "taxRate": 0,
+    "manufacturer": {
+      "name": "string",
+      "country": "string",
+      "address": "string"
+    }
+  }
 }
 ```
 
+### `GET /produto/{pro_id}/classification`
+**Descrição:** Retorna as informações de classificação de um produto específico.        
+**Parâmetros de Caminho:**
+ `id`: ID do produto.
 
-### `GET /template/`
-
-**Descrição:** Endpoint de template, pode ser utilizado para testes de conexão ou como base para novas rotas.
-
-**Resposta `200`:**
-
+**Resposta `200`:**  
 ```json
 {
-  "message": "Template Message"
+  "ncmCode": "string",
+  "description": "string",
+  "taxRate": 0,
+  "manufacturerName": "string",
+  "countryOfOrigin": "string",
+  "fullAddress": "string"
+}
+```
+
+## 🕓 Histórico
+### `GET /historico/`
+**Descrição:** Retorna o histórico completo de produtos processados.        
+**Parâmetros de Query:**
+- `skip`: número de registros a ignorar (default: 0)
+- `limit`: número máximo de registros a retornar (default: 100)
+
+**Resposta `200`:** 
+```json
+[
+  {
+    "pro_id": 0,
+    "historyId": 0,
+    "fileHash": "string",
+    "processedDate": "2025-10-26T21:04:34.280Z",
+    "partNumber": "string",
+    "status": "string",
+    "classification": {
+      "description": "string",
+      "ncmCode": "string",
+      "taxRate": 0,
+      "manufacturer": {
+        "name": "string",
+        "country": "string",
+        "address": "string"
+      }
+    }
+  }
+]
+```
+
+## 🤖 Classificação por IA
+### `GET /classify/{part_number}`
+**Descrição:** Recebe um Part Number e retorna os dados de classificação obtidos pelo serviço de IA.        
+**Parâmetros de Caminho:**
+- `part_number`: código do produto a ser classificado.
+
+**Resposta `200`:** 
+```json
+{
+  "ncm": "string",
+  "descricao": "string",
+  "fabricante": "string",
+  "aliquota": 0,
+  "descricao_ncm": "string"
 }
 ```
