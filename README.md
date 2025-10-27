@@ -58,7 +58,7 @@ ClassiPy - Classificação Inteligente de Produtos, é uma aplicação web proje
 
 ## 📽️ Demonstração do Projeto - Sprint 2 <a id="demonstracao"></a>
 
-![GIF Sprint 1](docs/gifs/gifSprint2.gif)
+![GIF Sprint 2](docs/gifs/gifSprint2.gif)
 
 ---
 
