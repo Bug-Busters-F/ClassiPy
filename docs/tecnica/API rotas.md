@@ -187,15 +187,9 @@
   "fullAddress": "string"
 }
 ```
-
-## 🕓 Histórico
-### `GET /historico/`
-**Descrição:** Retorna o histórico completo de produtos processados.        
-**Parâmetros de Query:**
-- `skip`: número de registros a ignorar (default: 0)
-- `limit`: número máximo de registros a retornar (default: 100)
-
-**Resposta `200`:** 
+### `GET /produto/recent`
+**Descrição:** Retorna as informações de classificação dos 5 produtos recentes.
+**Resposta `200`:**  
 ```json
 [
   {
@@ -215,8 +209,100 @@
         "address": "string"
       }
     }
-  }
+  }, 
+  ...
 ]
+```
+## 🕓 Histórico
+### `GET /historico/`
+**Descrição:** Retorna uma lista paginada do histórico de produtos processados.
+
+**Parâmetros de Query:**
+
+| Nome | Tipo | Descrição | Padrão |
+| :--- | :--- | :--- | :--- |
+| "page" | "integer" | Número da página a ser retornada. | 1 |
+| "limit" | "integer" | Número máximo de registros por página. | 10 |
+| "search" | "string" | Termo para buscar nos registros. | - |
+| "filter_date" | "string" | Filtra registros por data. | - |
+
+**Resposta 200 (Successful Response):**
+
+```json
+{
+  "pns": [
+    {
+      "pro_id": 0,
+      "historyId": 0,
+      "fileHash": "string",
+      "processedDate": "2025-11-23T21:09:02.700Z",
+      "partNumber": "string",
+      "status": "string",
+      "classification": {
+        "description": "string",
+        "ncmCode": "string",
+        "taxRate": 0,
+        "manufacturer": {
+          "name": "string",
+          "country": "string",
+          "address": "string"
+        }
+      }
+    }
+  ],
+  "page": 0,
+  "limit": 0,
+  "pages": 0
+}
+```
+
+**Resposta 422 (Validation Error):**
+
+```json
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string"
+    }
+  ]
+}
+```
+
+### `DELETE /historico/{history_id}`
+**Descrição:** Remove um registro específico do histórico de produtos processados usando o ID do histórico.
+
+**Parâmetros de Path:**
+
+| Nome | Tipo | Descrição |
+| :--- | :--- | :--- |
+| "history_id" | "integer" | O ID do registro histórico a ser deletado. |
+
+**Resposta 200 (Successful Response):**
+
+```json
+"string"
+```
+
+**Resposta 422 (Validation Error):**
+
+```json
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string"
+    }
+  ]
+}
 ```
 
 ## 🤖 Classificação por IA
